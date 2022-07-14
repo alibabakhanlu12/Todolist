@@ -22,8 +22,8 @@ function TaskForm() {
         <form  onSubmit={submithandeler}>
 
             <input type='text' required onChange={(e) =>(setTitle(e.target.value))} placeholder= 'Title...' value={title}/>
-            <input type='text' required onChange={(e) =>(setDescribtion(e.target.value))} placeholder= 'Describtion...' value={describtion}/>
-        <input type='submit' value='Add Task' />
+            <input type='text'  required onChange={(e) =>(setDescribtion(e.target.value))} placeholder= 'Describtion...' value={describtion}/>
+        <input className='button-40' type='submit' value='Add Task' />
         
         </form>
           </>

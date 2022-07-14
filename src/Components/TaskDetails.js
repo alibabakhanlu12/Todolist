@@ -1,7 +1,7 @@
 import React,{useContext, useState} from 'react'
 import {TodoContext} from '../Contexts/TodoContext'
 import {AiFillDelete} from 'react-icons/ai'
-import {MdOutlineDownloadDone} from 'react-icons/md'
+// import {MdOutlineDownloadDone} from 'react-icons/md'
 import styled from 'styled-components'
 import EditModal from './EditModal'
 
@@ -9,35 +9,20 @@ function TaskDetails({task , editedtitle,editeddes}) {
 
  
   const [isEdit , setisEdit] = useState(false)
-  const [istick ,issetTick] = useState(false)
-    const {dispatch } = useContext(TodoContext)
+  const [istick ,issetTick] = useState(true)
+
+
+  const {dispatch } = useContext(TodoContext)
   const TaskCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content:flex-start ;
-  gap: 15px;
-  font-weight:${ istick? 'bold':'normal'}; 
-  text-decoration:${ istick? 'line-through':'none'} ;
+  align-items: flex-start;
+  font-weight:${ istick?'normal' :'900'}; 
+  text-decoration:${ istick? 'none':'line-through'} ;
+  
+  
 `
-
-
-
-const DeleteAllTasks = styled.button`
-padding: 5px 10px;
-background-color: red;
-color: #fff;
-font-size: 20px;
-border-radius: 4px;
-cursor: pointer;
-border: none;
-margin-bottom: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-
-
-`
+ 
 const onEdit = ()=>{
   setisEdit(!isEdit)
    console.log(editeddes , editedtitle) }
@@ -46,12 +31,15 @@ const onEdit = ()=>{
 <>  
     <li className='task-card1'> 
  
- <input type='radio' onClick={()=>issetTick(!istick)}></input>
 
-     <TaskCard>
-        <div className='title'>{ task.title}</div>
+
+  
+      <div className='inputss'>
+      <input  type='checkbox' onClick={()=>issetTick(!istick)} />
+          <TaskCard>  
+            <div className='title'>{ task.title}</div>
         <div className='describtion'>{ task.describtion}</div>
-        </TaskCard>
+        </TaskCard></div>
         <div className='card-icons'>
         <AiFillDelete   onClick={()=> dispatch( {type: 'REMOVE_TASK', id:task.id})}></AiFillDelete>
     
@@ -61,7 +49,7 @@ const onEdit = ()=>{
     
     </div>
     </li>
-{task.length>=1  ? null : <DeleteAllTasks  onClick={()=>  dispatch({type :'CLEAR'})}>Delete All tasks</DeleteAllTasks> }
+
  
 
     </>

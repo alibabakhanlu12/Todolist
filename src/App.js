@@ -11,9 +11,18 @@ function App() {
   width: 90%;
   max-width: 700px;
   color: #eee;
-
+  border-radius: 15px;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.27);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.6px);
+-webkit-backdrop-filter: blur(6.6px);
+  /* background-color: ; */
+  
   `
   return (
+   
     <Main >
     <TodoContextProvider>
         <Navbar/>
@@ -21,6 +30,7 @@ function App() {
           <Tasklist/>
     </TodoContextProvider>
     </Main>
+ 
   );
 }
 
