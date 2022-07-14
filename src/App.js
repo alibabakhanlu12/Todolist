@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
+import TodoContextProvider from "./Contexts/TodoContext";
+import Navbar from './Components/Navbar'
+import Tasklist from "./Components/Tasklist";
+import NewTaskForm from './Components/NewTaskForm'
+import styled from "styled-components";
 function App() {
+  const Main = styled.div`
+  background: #022f58;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 700px;
+  color: #eee;
+
+  `
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main >
+    <TodoContextProvider>
+        <Navbar/>
+         <NewTaskForm/> 
+          <Tasklist/>
+    </TodoContextProvider>
+    </Main>
   );
 }
 

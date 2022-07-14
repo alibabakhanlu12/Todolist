@@ -1,13 +1,94 @@
+ 
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  background-image: url('./assets/image.jpg');
+}
+ 
+.navbar{
+  padding: 10px 20px;
+  text-align: center;
+  background: #0a2663
+}
+.navbar h1{
+  margin: 10px 0;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.task-list{
+  margin: 20px;
+}
+.task-list ul{
+  padding: 0;
+  list-style-type: none;
+  flex-direction: row;
+
+}
+.task-card1{
+  display: flex;
+  flex-direction: row;
+  justify-content:  space-between;
+  align-items: center;
+  height: 70px;
+}
+.card-icons{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 15px;
+  font-size: 25px;
+}
+.task-list li{
+  background: #6d3d6d;
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+ 
+.task-list .title{
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.2em;
+}
+ 
+.task-list .describtion{
+ 
+  color: #fff;
+  font-size: 0.9em;
+}
+ 
+
+.empty{
+  margin: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form{
+  padding: 20px;
+}
+input[type='text']{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: 6px 0;
+  border: 0;
+  font-size: 21px;
+ color: black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+input[type='submit']{
+  margin: 10px auto;
+  background: #eee;
+  border: 0;
+  padding: 6px 20px;
+  display: block;
 }
