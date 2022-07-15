@@ -1,14 +1,12 @@
 import React,{useContext, useState} from 'react'
 import {TodoContext} from '../Contexts/TodoContext'
 import {AiFillDelete} from 'react-icons/ai'
-// import {MdOutlineDownloadDone} from 'react-icons/md'
 import styled from 'styled-components'
 import EditModal from './EditModal'
 
-function TaskDetails({task , editedtitle,editeddes}) {
+function TaskDetails({task}) {
 
  
-  const [isEdit , setisEdit] = useState(false)
   const [istick ,issetTick] = useState(true)
 
 
@@ -19,21 +17,12 @@ function TaskDetails({task , editedtitle,editeddes}) {
   align-items: flex-start;
   font-weight:${ istick?'normal' :'900'}; 
   text-decoration:${ istick? 'none':'line-through'} ;
-  
-  
 `
  
-const onEdit = ()=>{
-  setisEdit(!isEdit)
-   console.log(editeddes , editedtitle) }
-  
+ 
   return (
 <>  
     <li className='task-card1'> 
- 
-
-
-  
       <div className='inputss'>
       <input  type='checkbox' onClick={()=>issetTick(!istick)} />
           <TaskCard>  
@@ -42,16 +31,9 @@ const onEdit = ()=>{
         </TaskCard></div>
         <div className='card-icons'>
         <AiFillDelete   onClick={()=> dispatch( {type: 'REMOVE_TASK', id:task.id})}></AiFillDelete>
-    
- 
-      <EditModal onClick ={onEdit}></EditModal>
- 
-    
+      <EditModal  ></EditModal>
     </div>
     </li>
-
- 
-
     </>
     )
 }

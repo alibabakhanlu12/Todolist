@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {FaEdit} from 'react-icons/fa'
-import 'bootstrap/dist/css/bootstrap.min.css';   
+import { FaEdit } from 'react-icons/fa'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function EditModal() {
   const [show, setShow] = useState(false);
-  const [editedtitle ,seteditedtitle] = useState('')
-  const [editeddes ,setediteddes] = useState('')
-        
+  const [editedtitle, seteditedtitle] = useState('')
+  const [editeddes, setediteddes] = useState('')
 
-  const titlehandler = (e) =>{
+
+  const titlehandler = (e) => {
     seteditedtitle(e.target.value)
   }
 
-  const deshandler = (e) =>{
+  const deshandler = (e) => {
 
     setediteddes(e.target.value)
   }
 
-  const submithandler = (e)=>{
+  const submithandler = (e) => {
     e.preventDefault()
-  
-  
-  const editing = {
- Editedtitle:editedtitle,
-    EditedDes:editeddes,
-  } 
+
+
+    //   const editing = {
+    //  Editedtitle:editedtitle,
+    //     EditedDes:editeddes,
+    //   } 
 
   }
 
@@ -35,21 +35,21 @@ function EditModal() {
 
   return (
     <>
-    
-       <FaEdit  onClick={handleShow}></FaEdit>
-     
- 
+
+      <FaEdit onClick={handleShow}></FaEdit>
+
+
       <Modal show={show} onHide={handleClose}>
-         <Form    onSubmit={submithandler}>   <Modal.Header closeButton>
+        <Form onSubmit={submithandler}>   <Modal.Header closeButton>
           <Modal.Title>Editing Task</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-      
+          <Modal.Body>
+
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label> Title</Form.Label>
               <Form.Control
-               value={editedtitle}
-               onChange={titlehandler}
+                value={editedtitle}
+                onChange={titlehandler}
                 type="text"
                 placeholder="Enter title of your task"
                 autoFocus
@@ -62,17 +62,17 @@ function EditModal() {
               <Form.Label>Describtion</Form.Label>
               <Form.Control value={editeddes} onChange={deshandler} as="textarea" rows={3} />
             </Form.Group>
-       
-        </Modal.Body>
-        <Modal.Footer>
-          <button onClick={handleClose}>
-            Save Changes
-          </button>
-        </Modal.Footer>  
-         </Form>
+
+          </Modal.Body>
+          <Modal.Footer>
+            <button onClick={handleClose}>
+              Save Changes
+            </button>
+          </Modal.Footer>
+        </Form>
       </Modal>
-      </>
+    </>
   );
 }
 
- export default EditModal
+export default EditModal
