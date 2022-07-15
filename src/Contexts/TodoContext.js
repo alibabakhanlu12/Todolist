@@ -1,5 +1,5 @@
 import React,{ createContext,useEffect, useReducer} from 'react'
-import { taskReducer } from '../Reducers/Taskreducer';
+import { taskReducer } from './Taskreducer';
 export const TodoContext = createContext(); 
 function TodoContextProvider(props) {
 

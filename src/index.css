@@ -44,6 +44,7 @@ body {
   gap: 15px;
   font-size: 25px;
   cursor: pointer;
+  color: #fff;
 }
 .inputss{
   display: flex;
@@ -116,7 +117,7 @@ input[type='checkbox']{
 
  
  
-.button-40 {
+.button-40 , .deletealltasks {
   background-color: #111827;
   border: 1px solid transparent;
   border-radius: .75rem;
@@ -141,11 +142,11 @@ input[type='checkbox']{
   width: auto;
 }
 
-.button-40:hover {
+.button-40:hover , .deletealltasks:hover {
   background-color: #374151;
 }
 
-.button-40:focus {
+.button-40:focus , .deletealltasks:focus {
   box-shadow: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -158,7 +159,6 @@ input[type='checkbox']{
 }
 
 .deletealltasks{
-background-color: rgb(173, 0, 0);
 color: #fff;
 font-size: 18px;
 border-radius: 4px;
@@ -167,6 +167,8 @@ border: none;
 margin-bottom: 10px;
  padding: 8px 10px;
 }
+ 
+
 .deletealltasks1 {
   display: flex;
   align-items: center;
