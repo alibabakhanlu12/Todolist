@@ -1,9 +1,11 @@
 import React,{useState , useContext} from 'react'
 import { TodoContext } from '../Contexts/TodoContext'
 function TaskForm() {
-      const {dispatch}  = useContext(TodoContext)
-      const [title , setTitle] = useState('');  
- 
+      const  {dispatch} = useContext(TodoContext)
+
+
+
+  const [title , setTitle] = useState('');  
   const [describtion , setDescribtion] = useState('');  
 
 
@@ -20,7 +22,7 @@ function TaskForm() {
 
             <input type='text' required onChange={(e) =>(setTitle(e.target.value))} placeholder= 'Title...' value={title}/>
             <input type='text'  required onChange={(e) =>(setDescribtion(e.target.value))} placeholder= 'Describtion...' value={describtion}/>
-        <input   type='submit' value='Add Task' />
+        <button className='button-40'   value='Add Task'> Add Task</button>
         
         </form>
   )

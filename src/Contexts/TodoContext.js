@@ -4,9 +4,9 @@ export const TodoContext = createContext();
 function TodoContextProvider(props) {
 
     const[tasks , dispatch] = useReducer(taskReducer,[],()=>{
-        const localdata = localStorage.getItem('tasks')
-    return localdata ?JSON.parse(localdata):[]
-    })
+        const localdata = localStorage.getItem('tasks');
+    return localdata ?JSON.parse(localdata):[];
+    });
  
 
 
